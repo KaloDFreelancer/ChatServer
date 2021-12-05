@@ -23,3 +23,4 @@ services:
     - chat-server-mysql
     environment:
       SPRING_PROFILES_ACTIVE: docker
+    restart: always
