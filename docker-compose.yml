@@ -1,0 +1,23 @@
+version: '2.1'
+services:
+  chat-server-mysql:
+    container_name: chatserver-mysql
+    image: 'mysql'
+    volumes:
+      - ./dbdata:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: ChatServerDB
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - '3306:3306'
+    restart: always
+  chat-server-app:
+    image: chat-server-app
+    build: .
+    ports:
+      - '8081:8080'
+    volumes:
+      - /data/chat-server-app
+    depends_on:
+    - chat-server-mysql
