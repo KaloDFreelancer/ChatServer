@@ -14,7 +14,7 @@ your local machine for development and testing purposes.
 
 ### Installing
 
-    docker pull kaloyanmitev/chat-server:1.0
+    docker pull kaloyanmitev/chat-server:1.1
 
 And after git clone run in the terminal(with Java11):
     
