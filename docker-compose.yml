@@ -13,8 +13,8 @@ services:
       - '3306:3306'
     restart: always
   chat-server-app:
-#    image: kaloyanmitev/chat-server
-    build: .
+    image: kaloyanmitev/chat-server
+#    build: .
     ports:
       - '8081:8080'
     volumes:
