@@ -21,3 +21,5 @@ services:
       - /data/chat-server-app
     depends_on:
     - chat-server-mysql
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
