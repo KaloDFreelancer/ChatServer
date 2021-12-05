@@ -12,14 +12,16 @@ your local machine for development and testing purposes.
 - [Docker](https://www.docker.com/get-started)
 - Java11
 
-### Installing
+### Running
 
-    docker pull kaloyanmitev/chat-server:1.1
+    docker pull kaloyanmitev/chat-server
 
-And after git clone run in the terminal(with Java11):
-    
+### Develop
+
     ./gradlew clean build -x test
-
+    
 ---
 
     docker-compose up
+    
+    
