@@ -12,15 +12,7 @@ your local machine for development and testing purposes.
 - [Docker](https://www.docker.com/get-started)
 - Java11
 
-### Running
-
-    docker pull kaloyanmitev/chat-server
-
-### Develop
-
-    ./gradlew clean build -x test
-    
----
+### Installation
 
     docker-compose up
     
