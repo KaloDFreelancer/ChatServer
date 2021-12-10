@@ -6,8 +6,12 @@ import bg.kmitev.ChatServer.model.MessageType;
 import bg.kmitev.ChatServer.repository.MessageRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
+
+import javax.validation.Valid;
 
 @Service
+@Validated
 public class MessageService {
 
     private final MessageRepository messageRepository;
@@ -16,10 +20,10 @@ public class MessageService {
         this.messageRepository = messageRepository;
     }
 
-    public void save(MessageData messageData, MessageType messageType) {
+    public void save(@Valid MessageData messageData, MessageType type) {
         Message bean = new Message();
         BeanUtils.copyProperties(messageData, bean);
-        bean.setType(messageType);
+        bean.setType(type);
         messageRepository.save(bean);
     }
 }
