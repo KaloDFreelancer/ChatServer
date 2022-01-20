@@ -1,8 +1,9 @@
-version: '2.1'
+version: '2.4'
 services:
   chat-server-mysql:
     container_name: chatserver-mysql
     image: 'mysql'
+    platform: linux/amd64
     volumes:
       - ./dbdata:/var/lib/mysql
     environment:
