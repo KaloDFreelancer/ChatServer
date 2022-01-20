@@ -17,7 +17,7 @@ public class MessageController {
     private final MessageService messageService;
 
     @PostMapping("/send_{type}")
-    ResponseEntity<String> sendText(@PathVariable MessageType type, @RequestBody MessageRequestPayload requestPayload) {
+    ResponseEntity<String> create(@PathVariable MessageType type, @RequestBody MessageRequestPayload requestPayload) {
         MessageData messageData = MessageDataFactory.createInstance(type);
         messageData.setPayload(requestPayload.getPayload());
         messageService.save(messageData, type);
